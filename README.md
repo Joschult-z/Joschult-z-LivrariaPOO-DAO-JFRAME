@@ -1,6 +1,2 @@
-# LivrariaPOOMain
-# LivrariaPOO-DAO-JFRAME
-# Joschult-z-LivrariaPOO-DAO-JFRAME
-# Joschult-z-LivrariaPOO-DAO-JFRAME
-# Joschult-z-LivrariaPOO-DAO-JFRAME
-# Joschult-z-LivrariaPOO-DAO-JFRAME
+# LivrariaPOO-DAO-JFRAME #
+SO DEIXANDO CLARO O QUANTO EU ODEIO GIT BASH E AFINS. KKK
