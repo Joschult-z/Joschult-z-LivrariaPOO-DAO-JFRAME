@@ -23,6 +23,7 @@ import services.EditoraServicos;
 import services.LivroServicos;
 import services.ServicosFactory;
 import services.VendaLivroServicos;
+import view.jfMenu;
 
 /**
  *
@@ -242,6 +243,9 @@ public class LivrariaPOO_bd {
      */
     public static void main(String[] args) throws SQLException {
         // TODO code application logic here
+        jfMenu jfMenu = new jfMenu();
+        jfMenu.setVisible(true);
+        /*
         cadCliente.mockClientes();
         cadEditora.mockEditoras();
         cadLivro.mockLivros();
@@ -322,8 +326,8 @@ public class LivrariaPOO_bd {
                     break;
             }
         } while (opM != 0);//fim Sistema
-
-    }
+*/
+    }// fim da main
 
     public static void cadastrarEditora() {
         int idEditora;

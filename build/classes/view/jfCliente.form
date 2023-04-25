@@ -75,7 +75,7 @@
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jl_Endereco" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jtfCPF" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
+                                              <Component id="jlCPF" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       </Group>
@@ -84,7 +84,7 @@
                                       <Component id="jtfEndereco" max="32767" attributes="0"/>
                                       <Component id="jtfNome" alignment="0" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jffCPF" max="32767" attributes="0"/>
+                                          <Component id="jtfCPF" max="32767" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="jl_Telefone" min="-2" pref="52" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -96,7 +96,9 @@
                                   <Component id="jb_Save" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
                                   <Component id="jb_Clear" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="131" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Component id="jb_Delete" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="42" max="32767" attributes="0"/>
                                   <Component id="jb_Edit" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
                                   <Component id="jb_Cancel" min="-2" max="-2" attributes="0"/>
@@ -119,10 +121,10 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jtfCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlCPF" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jl_Telefone" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jffTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jffCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtfCPF" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -135,6 +137,7 @@
                       <Component id="jb_Clear" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jb_Save" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jb_Cancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_Delete" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="348" max="-2" attributes="0"/>
@@ -155,12 +158,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jl_Nome">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nome:"/>
+            <Property name="text" type="java.lang.String" value="*Nome:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jl_Endereco">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Endere&#xe7;o:"/>
+            <Property name="text" type="java.lang.String" value="*Endere&#xe7;o:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jl_Telefone">
@@ -168,9 +171,9 @@
             <Property name="text" type="java.lang.String" value="Telefone:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jtfCPF">
+        <Component class="javax.swing.JLabel" name="jlCPF">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CPF:"/>
+            <Property name="text" type="java.lang.String" value="*CPF:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtfEndereco">
@@ -214,6 +217,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Edit"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_EditActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jb_Cancel">
           <Properties>
@@ -230,7 +236,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="jtClientes">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -242,10 +248,10 @@
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="4" rowCount="4">
-                    <Column editable="false" title="Nome" type="java.lang.String"/>
                     <Column editable="false" title="CPF" type="java.lang.Object"/>
-                    <Column editable="false" title="Endere&#xe7;o" type="java.lang.Object"/>
+                    <Column editable="false" title="Nome" type="java.lang.String"/>
                     <Column editable="false" title="Telefone" type="java.lang.Object"/>
+                    <Column editable="false" title="Endere&#xe7;o" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -280,17 +286,24 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTable1KeyTyped"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jtClientesMouseClicked"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtClientesKeyTyped"/>
               </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JFormattedTextField" name="jffCPF">
+        <Component class="javax.swing.JTextField" name="jtfCPF">
+          <Events>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtfCPFFocusLost"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jb_Delete">
           <Properties>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-              <Format format="###.###.###-##" subtype="-1" type="5"/>
-            </Property>
+            <Property name="text" type="java.lang.String" value="Delete"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_DeleteActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -6,6 +6,7 @@
 package Util;
 
 import java.util.InputMismatchException;
+import model.Cliente;
 
 /**
  *
@@ -153,5 +154,9 @@ public class Validadores {
         return (CNPJ.substring(0, 2) + "." + CNPJ.substring(2, 5) + "."
                 + CNPJ.substring(5, 8) + "." + CNPJ.substring(8, 12) + "-"
                 + CNPJ.substring(12, 14));
+    }
+
+    public static Object imprimeCPF(Cliente c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
