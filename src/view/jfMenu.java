@@ -129,12 +129,14 @@ public class jfMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_JMI_ClienteActionPerformed
 
     private void JMI_EditoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMI_EditoraActionPerformed
-        JOptionPane.showMessageDialog(this, "Cadastrar Editora!");
+       jfEditora janelaEditora = new jfEditora();
+       janelaEditora.setVisible(true);
 
     }//GEN-LAST:event_JMI_EditoraActionPerformed
 
     private void JMI_LivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMI_LivroActionPerformed
-        JOptionPane.showMessageDialog(this, "Cadastrar Livro!");
+        jfLivro janelaLivro = new jfLivro();
+        janelaLivro.setVisible(true);
 
     }//GEN-LAST:event_JMI_LivroActionPerformed
 

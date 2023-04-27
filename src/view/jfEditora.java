@@ -198,7 +198,7 @@ public class jfEditora extends javax.swing.JFrame {
                     .addComponent(jScrollPane1)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jl_NomeEditora)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(1, 1, 1)
                         .addComponent(jtfNomeEditora))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -290,10 +290,10 @@ public class jfEditora extends javax.swing.JFrame {
             //pegar dados da tela para salvar
 
             int idEditora = 0;
-            String nmEditora = jtfNomeEditora.getText();
+            String nmEditora = jtfNomeEditora.getText().toUpperCase();
             String cnpj = jtfCNPJ.getText();
             String endereco = jtfEnderecoEditora.getText();
-            String telefone = jffTelefoneEditora.getText();
+            String telefone = jffTelefoneEditora.getText().toUpperCase();
             String gerente = jtfGerenteEditora.getText();
             EditoraServicos ediS = ServicosFactory.getEditoraServicos();
 
@@ -504,7 +504,6 @@ public class jfEditora extends javax.swing.JFrame {
         model.fireTableDataChanged();
         Object rowData[] = new Object[5];
         EditoraServicos ediS = ServicosFactory.getEditoraServicos();
-        for (Object cliente : ediS.getEditoraDAO()) {
             for (Editora edi : ediS.getEditoraDAO()) {
                 rowData[0] = edi.getNmEditora();
                 rowData[1] = edi.getCnpj();
@@ -514,7 +513,6 @@ public class jfEditora extends javax.swing.JFrame {
                 model.addRow(rowData);
             }
         }
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
