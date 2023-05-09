@@ -442,10 +442,10 @@ public class jfLivro extends javax.swing.JFrame {
                     "Pesquisa", JOptionPane.INFORMATION_MESSAGE);
         } else {
             Object[] resp = {"Sim", "Não"};
-        int resposta = JOptionPane.showOptionDialog(this, "Editora" + edi.getNmEditora() + "está correta?", "Pesquisa", 
-                JOptionPane.DEFAULT_OPTION, 
-                JOptionPane.WARNING_MESSAGE, 
-                null, resp, resp[0]);
+            int resposta = JOptionPane.showOptionDialog(this, "Editora" + edi.getNmEditora() + "está correta?", "Pesquisa",
+                    JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.WARNING_MESSAGE,
+                    null, resp, resp[0]);
 
             if (resposta == 1) {
                 jtfCNPJEditoraLivro.setText("");
@@ -482,7 +482,7 @@ public class jfLivro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,
                     "Ok, entendo sua decisão");
         }
-        
+
     }//GEN-LAST:event_jb_DeletarActionPerformed
 
     private void jb_EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_EditarActionPerformed
@@ -494,20 +494,30 @@ public class jfLivro extends javax.swing.JFrame {
 
         int linha;
         linha = jtLivro.getSelectedRow();
-        String isbn = (String) jtLivro.getValueAt(linha, 0);
+        String Titulo = (String) jtLivro.getValueAt(linha, 0);
+        String Autor = (String) jtLivro.getValueAt(linha, 1);
+        String Assunto = (String) jtLivro.getValueAt(linha, 2);
+        String isbn = (String) jtLivro.getValueAt(linha, 3);
+        String Estoque = (String) jtLivro.getValueAt(linha, 4);
+        String Preco = (String) jtLivro.getValueAt(linha, 5);
+        String CNPJ = (String) jtLivro.getValueAt(linha, 6);
         LivroServicos livroS = ServicosFactory.getLivroServicos();
         Livro li = livroS.buscaLivroISBN(isbn);
+
         //carregar dados do form
-        jtfISBN.setText(get);
-        jtfCNPJ.setText(cnpj);
-        jtfEnderecoEditora.setText(Endereco);
-        jffTelefoneEditora.setText(Telefone);
-        jtfNomeEditora.requestFocus();
+        jtfTituloLivro.setText(Titulo);
+        jtfAutorLivro.setText(Autor);
+        jtfAssuntoLivro.setText(Assunto);
+        jtfISBN.setText(isbn);
+        jtfEstoqueLivro.setText(Estoque);
+        jtfPrecoLivro.setText(Preco);
+        jtfCNPJEditoraLivro.setText(CNPJ);
+        jtfTituloLivro.requestFocus();
     }//GEN-LAST:event_jb_EditarActionPerformed
 
     /**
-         * @param args the command line arguments
-         */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
